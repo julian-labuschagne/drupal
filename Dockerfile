@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER Julian Labuschagne "personxx@gmail.com"
 ENV REFRESHED_AT 2015-10-20
 
-RUN apt-get -y -q update && apt-get -y -q upgrade && apt-get install -y -q curl php5-cli git-core
+RUN apt-get -y -q update && apt-get -y -q upgrade && apt-get install -y -q curl php5-cli git-core mariadb-client
 
 # grab gosu for easy step-down from root
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
