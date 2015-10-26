@@ -14,8 +14,13 @@ RUN curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/dow
 
 RUN adduser --system --group --home /var/www/webdev webdev && adduser webdev www-data
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -LSs http://drupalconsole.com/installer | php
+RUN mv console.phar /usr/local/bin/drupal
+
 USER webdev
 RUN composer global require drush/drush:dev-master
 COPY bashrc /var/www/webdev/.bashrc
 
 WORKDIR /var/www/webdev
+
+CMD [ "/bin/bash" ]
