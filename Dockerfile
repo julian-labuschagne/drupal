@@ -6,8 +6,6 @@ RUN apt-get -y -q update && apt-get -y -q upgrade && apt-get install -y -q curl 
 
 RUN adduser --system --group --home /var/www/webdev webdev && adduser webdev www-data
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN curl -LSs http://drupalconsole.com/installer | php
-RUN mv console.phar /usr/local/bin/drupal
 
 USER webdev
 RUN composer global require drush/drush:dev-master
