@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 MAINTAINER Julian Labuschagne "personxx@gmail.com"
-ENV REFRESHED_AT 2015-10-20
+ENV REFRESHED_AT 2016-10-17
 
 RUN apt-get -y -q update && apt-get -y -q upgrade && apt-get install -y -q curl php5-cli php5-mysql php5-gd php-pear php5-curl git-core mariadb-client unzip wget curl
 
