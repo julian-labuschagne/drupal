@@ -12,7 +12,7 @@ RUN ln -s /var/www/.composer/vendor/bin/drush /usr/local/bin/drush
 USER webdev
 WORKDIR /var/www
 
-RUN composer global require drush/drush:9.x
+RUN composer global require drush/drush:8.1.16
 
 RUN git config --global credential.helper cache
 RUN git config --global credential.helper 'cache --timeout=28800'
